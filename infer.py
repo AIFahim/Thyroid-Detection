@@ -6,12 +6,12 @@ from joblib import load
 app = Flask(__name__)
 
 # Load the saved components
-knn_model = load('knn_model.joblib')
+knn_model = load('./Data/knn_model.joblib')
 
 
 @app.route('/')
 def home():
-    return render_template('index.html')  # Simple HTML form for file upload
+    return render_template('./templates/index.html')  # Simple HTML form for file upload
 
 @app.route('/predict', methods=['POST'])
 def predict():
